@@ -7,6 +7,15 @@ function updateActivePage() {
         var a = li.getElementsByTagName("a")[0];
         if (a.pathname == currentPage) {
             li.classList.add("active");
+            preventRedirect(a.id);
         }
     }
+}
+
+function preventRedirect(id) {
+    document.addEventListener('click', function(event) {
+        if (event.target.id == id) {
+            event.preventDefault();
+        }
+    });
 }
