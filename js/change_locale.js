@@ -10,14 +10,16 @@ function initializeLocale() {
     for (let index = 0; index < possibleLocales.length; index++) {
         const possibleLocale = possibleLocales[index];
         if (SUPPORTED_LOCALES.includes(possibleLocale.toLowerCase())) {
-            changeLocale(possibleLocale.toLowerCase());
+            localStorage.setItem('locale', possibleLocale);
+            updateLocale();
             return;
         }
     }
-    changeLocale(DEFAULT_LOCALE);
+    localStorage.setItem('locale', DEFAULT_LOCALE);
 }
 
 function changeLocale(newLocale) {
+    showLocaleSelector();
     if (newLocale == localStorage.getItem('locale')) {
         return;
     }
@@ -26,6 +28,7 @@ function changeLocale(newLocale) {
 }
 
 function updateLocale() {
+    showActiveLocale();
     let currentLocale = localStorage.getItem('locale');
     if (currentLocale == null) {
         throw 'Null locale';
@@ -35,4 +38,17 @@ function updateLocale() {
 
 function showLocaleSelector() {
     document.getElementById("language-menu").classList.toggle("show");
+    document.getElementById("shadow-menu").classList.toggle("show");
+}
+
+function showActiveLocale() {
+    let ul = document.getElementById("language-menu");
+    let locales = ul.getElementsByTagName("a");
+    for (let index = 0; index < locales.length; index++) {
+        const locale = locales[index];
+        locale.classList.remove("active");
+        if(locale.id == localStorage.getItem('locale')) {
+            locale.classList.add("active");
+        }
+    }
 }

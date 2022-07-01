@@ -40,16 +40,21 @@ Shared navigation bar
     font-family: inherit;
     font-style: inherit;
     font-weight: inherit;
+    cursor: pointer;
 }
 
 .nav-bar .localeSelector .dropdown-locale-content {
     display: none;
-    position: absolute;
-    z-index: 1;
+    position: relative;
+    z-index: 2;
 }
 
 .nav-bar .localeSelector .dropdown-locale-content a {
     display: block;
+    cursor: pointer;
+}
+
+.nav-bar .localeSelector .dropdown-locale-content a.active {
 }
 
 .nav-bar .localeSelector .dropdown-locale-content.show {
@@ -57,10 +62,16 @@ Shared navigation bar
 }
 
 .shadow {
-    background: blueviolet;
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 0px;
     right: 0px;
     left: 0px;
     bottom: 0px;
+    z-index: 1;
+}
+
+.shadow.show {
+    display: inline;
 }
