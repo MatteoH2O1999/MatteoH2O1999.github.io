@@ -1,46 +1,48 @@
-<nav class="nav-bar", id="navigationBar">
-    <ul>
-        <li class="logo">
-            <a href="/", id="indexRef">
-                Logo placeholder
-            </a>
-        </li>
-        <li>
-            <a href="home" id="homeRef">
-                Home
-            </a>
-        </li>
-        <li>
-            <a href="about" id="aboutRef">
-                About
-            </a>
-        </li>
-        <li>
-            <a href="projects" id="projectsRef">
-                Projects
-            </a>
-        </li>
-        <li>
-            <a href="music" id="musicRef">
-                Music
-            </a>
-        </li>
-        <li class="localeSelector">
-            <button class="dropdown-locale" id="language-selector" onclick="showLocaleSelector();">
-                Choose language
-            </button>
-            <div class="dropdown-locale-content" id="language-menu">
-                <a onclick="changeLocale('en-us');" id="en-us">
-                    English
+<header>
+    <nav class="nav-bar", id="navigationBar">
+        <ul>
+            <li class="logo">
+                <a href="/", id="indexRef">
+                    <img src="resources/navbar/logo.png" class="navbar-logo">
                 </a>
-                <a onclick="changeLocale('it-it');" id="it-it">
-                    Italiano
+            </li>
+            <li>
+                <a href="home" id="homeRef">
+                    Home
                 </a>
-            </div>
-            <div class="shadow" onclick="showLocaleSelector();" id="shadow-menu"></div>
-        </li>
-    </ul>
-</nav>
+            </li>
+            <li>
+                <a href="about" id="aboutRef">
+                    About
+                </a>
+            </li>
+            <li>
+                <a href="projects" id="projectsRef">
+                    Projects
+                </a>
+            </li>
+            <li>
+                <a href="music" id="musicRef">
+                    Music
+                </a>
+            </li>
+            <li class="localeSelector">
+                <a class="dropdown-locale" id="language-selector" onclick="showLocaleSelector();">
+                    Choose language
+                </a>
+                <div class="dropdown-locale-content" id="language-menu">
+                    <a onclick="changeLocale('en-us');" id="en-us">
+                        English
+                    </a>
+                    <a onclick="changeLocale('it-it');" id="it-it">
+                        Italiano
+                    </a>
+                </div>
+                <div class="shadow" onclick="showLocaleSelector();" id="shadow-menu"></div>
+            </li>
+        </ul>
+    </nav>
+</header>
 <script src="js/active_page.js"></script>
 <script src="js/change_locale.js"></script>
 <script>

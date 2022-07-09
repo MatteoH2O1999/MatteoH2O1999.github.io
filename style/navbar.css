@@ -4,9 +4,38 @@ Shared navigation bar
 
 ***********************/
 
+.nav-bar {
+    background-color: gray;
+}
+
 .nav-bar ul {
     list-style-type: none;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 50px;
+}
+
+@media screen and (max-width:600px) {
+    .nav-bar ul {
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    .localeSelector {
+        margin: auto;
+    }
+
+    .nav-bar ul li.logo {
+        margin: auto;
+    }
+
+    .nav-bar ul li.logo a img {
+        height: auto;
+        width: 100%;
+    }
 }
 
 .nav-bar ul li {
@@ -15,6 +44,7 @@ Shared navigation bar
 }
 
 .nav-bar ul li.active {
+    color: darkgray;
 }
 
 .nav-bar ul li a {
@@ -23,14 +53,20 @@ Shared navigation bar
 }
 
 .nav-bar ul li.logo {
-    float: left;
+    margin-right: auto;
+    height: inherit;
+    padding: 0 0;
 }
 
-.nav-bar ul li.logo.active {
+.nav-bar ul li.logo img {
+    display: block;
+    height: 100%;
+    width: auto;
+    margin: 0;
 }
 
 .localeSelector {
-    float: right;
+    margin-left: auto;
 }
 
 .nav-bar .localeSelector .dropdown-locale {
@@ -45,7 +81,7 @@ Shared navigation bar
 
 .nav-bar .localeSelector .dropdown-locale-content {
     display: none;
-    position: relative;
+    position: absolute;
     z-index: 2;
 }
 
@@ -55,6 +91,7 @@ Shared navigation bar
 }
 
 .nav-bar .localeSelector .dropdown-locale-content a.active {
+    color: cornflowerblue;
 }
 
 .nav-bar .localeSelector .dropdown-locale-content.show {
@@ -64,7 +101,7 @@ Shared navigation bar
 .shadow {
     display: none;
     background: rgba(0, 0, 0, 0.5);
-    position: absolute;
+    position: fixed;
     top: 0px;
     right: 0px;
     left: 0px;
