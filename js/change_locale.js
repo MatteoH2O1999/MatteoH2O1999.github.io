@@ -10,7 +10,7 @@ function initializeLocale() {
     for (let index = 0; index < possibleLocales.length; index++) {
         const possibleLocale = possibleLocales[index];
         if (SUPPORTED_LOCALES.includes(possibleLocale.toLowerCase())) {
-            localStorage.setItem('locale', possibleLocale);
+            localStorage.setItem('locale', possibleLocale.toLowerCase());
             updateLocale();
             return;
         }
