@@ -26,6 +26,8 @@ jobs:
           cache: 'npm'
       - name: Install production and development dependencies
         run: npm ci --include=dev
+      - name: Generate dist folder
+        run: npm run generate
       - name: Run tests
         run: npm run test
 
