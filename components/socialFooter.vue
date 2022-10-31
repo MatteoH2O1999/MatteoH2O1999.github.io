@@ -2,10 +2,10 @@
     <div class="social-icons">
         <ul>
             <li>
-                <a href="">
+                <a href="https://www.youtube.com/channel/UCwYnDSpaMPxS6kJpy8vQgNw" target="_blank">
                     <font-awesome-icon icon="fa-brands fa-youtube" class="social-icon"></font-awesome-icon>
                 </a>
-                <a href="">
+                <a href="https://github.com/MatteoH2O1999" target="_blank">
                     <font-awesome-icon icon="fa-brands fa-github" class="social-icon"></font-awesome-icon>
                 </a>
             </li>
