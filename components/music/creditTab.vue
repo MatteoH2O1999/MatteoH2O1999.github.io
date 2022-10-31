@@ -46,9 +46,4 @@
         max-width: 40vw;
     }
 }
-
-.card-div img {
-    width: 100%;
-    aspect-ratio: 2 / 3;
-}
 </style>
