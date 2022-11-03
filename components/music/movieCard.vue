@@ -4,7 +4,7 @@
         <div class="additional-info">
             <div class="additional-info-shadow" ref="shadow" @click="hideInfo();"></div>
             <div class="additional-info-window" ref="infoWindow">
-                Test
+                <MusicInfoWindow :data="this.data" @closeTab="hideInfo();"/>
             </div>
         </div>
     </div>
@@ -29,11 +29,6 @@
                 this.$refs.infoWindow.classList.remove('show');
                 document.body.style.overflow = 'auto';
             }
-        },
-        computed: {
-            releaseDate() {
-                return new Date(this.data.releaseDate);
-            }
         }
     }
 </script>
@@ -42,6 +37,12 @@
 .card-poster {
     width: 100%;
     aspect-ratio: 2 / 3;
+    transition: transform 0.1s ease;
+}
+
+.card-poster:hover {
+    transform: scale(1.05, 1.05);
+    transition: transform 0.1s ease;
 }
 
 .additional-info {
@@ -68,8 +69,6 @@
 }
 
 .additional-info .additional-info-window {
-    background-color: whitesmoke;
-    color: black;
     visibility: hidden;
     position: fixed;
     top: 50%;
