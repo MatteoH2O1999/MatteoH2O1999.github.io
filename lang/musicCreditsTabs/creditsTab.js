@@ -8,7 +8,7 @@ let credits_en_us = {
 }
 
 let credits_it_it = {
-    "movies": "Film, Serie TV e Web Serie",
+    "movies": "Film, Serie TV e Web",
     "musicals": "Musical",
     "games": "Videogiochi",
     "albums": "Album",

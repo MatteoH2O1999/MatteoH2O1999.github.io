@@ -2,13 +2,13 @@
 </template>
 
 <script>
-export default {
-    data() {
-        return {
-            name: 'musicLink'
+    export default {
+        data() {
+            return {
+                name: 'musicLink'
+            }
         }
     }
-}
 </script>
 
 <style>
