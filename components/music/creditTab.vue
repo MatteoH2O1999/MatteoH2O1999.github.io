@@ -27,23 +27,24 @@
 <style>
 .cards-tab {
     display: grid;
+    justify-content: center;
 }
 
 @media only screen and (min-width: 1024px) {
-    .card-div {
-        max-width: 15vw;
+    .cards-tab {
+        grid-template-columns: repeat(auto-fill, 15vw);
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .card-div {
-        max-width: 20vw;
+    .cards-tab {
+        grid-template-columns: repeat(auto-fill, 20vw);
     }
 }
 
-@media only screen and (max-width: 768px){
-    .card-div {
-        max-width: 40vw;
+@media only screen and (max-width: 767px){
+    .cards-tab {
+        grid-template-columns: repeat(auto-fill, 40vw);
     }
 }
 </style>
