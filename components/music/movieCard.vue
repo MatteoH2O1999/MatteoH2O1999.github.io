@@ -4,7 +4,7 @@
         <div class="additional-info">
             <div class="additional-info-shadow" ref="shadow" @click="hideInfo();"></div>
             <div class="additional-info-window" ref="infoWindow">
-                <nuxt-img format="webp" sizes="xs:40vw sm:40vw md:20vw lg:15vw xl:15vw xxl:15vw" :src="this.data.imgPath" class="card-poster"/>
+                Test
             </div>
         </div>
     </div>
@@ -28,6 +28,11 @@
                 this.$refs.shadow.classList.remove('show');
                 this.$refs.infoWindow.classList.remove('show');
                 document.body.style.overflow = 'auto';
+            }
+        },
+        computed: {
+            releaseDate() {
+                return new Date(this.data.releaseDate);
             }
         }
     }
@@ -63,6 +68,8 @@
 }
 
 .additional-info .additional-info-window {
+    background-color: whitesmoke;
+    color: black;
     visibility: hidden;
     position: fixed;
     top: 50%;

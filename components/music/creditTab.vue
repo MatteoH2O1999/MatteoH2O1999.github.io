@@ -18,7 +18,7 @@
             }
         },
         async fetch() {
-            this.cards = await this.$content("music", this.subFolder).fetch().catch((err) => {this.cards = []});
+            this.cards = await this.$content("music", this.subFolder).sortBy('releaseDate').fetch().catch((err) => {this.cards = []});
         },
         props: ['subFolder', 'tabTitle']
     }

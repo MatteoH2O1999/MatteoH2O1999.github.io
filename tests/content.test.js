@@ -87,7 +87,7 @@ describe('Music credits', () => {
                 expect(img).toBeTruthy();
             })
 
-            describe('poster image (specified via "imgPath")', () => {
+            describe('Poster image (specified via "imgPath")', () => {
                 let imgPath;
                 let imgData;
 
@@ -125,6 +125,74 @@ describe('Music credits', () => {
                     const height = imageDimensions.height;
                     const ratio = width / height;
                     expect(ratio).toBeCloseTo(desiredPosterRatio, 1);
+                })
+            })
+
+            test('has a "releaseDate" attribute', () => {
+                let date;
+                try {
+                    date = jsonData.releaseDate;
+                } catch (error) {
+                    date = null;
+                }
+                expect(date).toBeTruthy();
+            })
+
+            describe('Release date (specified via "releaseDate")', () => {
+                let releaseDate;
+
+                beforeAll(() => {
+                    try {
+                        releaseDate = jsonData.releaseDate;
+                    } catch (error) {
+                        releaseDate = null;
+                    }
+                })
+
+                test('is a valid date string', () => {
+                    const date = new Date(releaseDate);
+                    expect(date).toBeInstanceOf(Date);
+                    let isoString;
+                    try {
+                        isoString = date.toISOString();
+                    } catch (error) {
+                        isoString = null;
+                    }
+                    expect(isoString).toBeTruthy();
+                })
+
+                test('is a UTC date string', () => {
+                    const yearString = releaseDate.slice(0, 4);
+                    const yearDash = releaseDate.charAt(4);
+                    const monthString = releaseDate.slice(5, 7);
+                    const monthDash = releaseDate.charAt(7);
+                    const dayString = releaseDate.slice(8, 10);
+                    const letterT = releaseDate.charAt(10);
+                    const hourString = releaseDate.slice(11, 13);
+                    const hourSemicolon = releaseDate.charAt(13);
+                    const minuteString = releaseDate.slice(14, 16);
+                    const minuteSemicolon = releaseDate.charAt(16);
+                    const secondString = releaseDate.slice(17, 19);
+                    const letterZ = releaseDate.charAt(19);
+
+                    expect(parseInt(yearString)).toBeGreaterThan(0);
+                    expect(parseInt(yearString)).toBeLessThan(10000);
+                    expect(yearDash).toBe('-');
+                    expect(parseInt(monthString)).toBeGreaterThan(0);
+                    expect(parseInt(monthString)).toBeLessThanOrEqual(12);
+                    expect(monthDash).toBe('-');
+                    expect(parseInt(dayString)).toBeGreaterThan(0);
+                    expect(parseInt(dayString)).toBeLessThanOrEqual(31);
+                    expect(letterT).toBe('T');
+                    expect(parseInt(hourString)).toBeGreaterThanOrEqual(0);
+                    expect(parseInt(hourString)).toBeLessThan(24);
+                    expect(hourSemicolon).toBe(':');
+                    expect(parseInt(minuteString)).toBeGreaterThanOrEqual(0);
+                    expect(parseInt(minuteString)).toBeLessThan(60);
+                    expect(minuteSemicolon).toBe(':');
+                    expect(parseInt(secondString)).toBeGreaterThanOrEqual(0);
+                    expect(parseInt(secondString)).toBeLessThan(60);
+                    expect(letterZ).toBe('Z');
                 })
             })
         })
