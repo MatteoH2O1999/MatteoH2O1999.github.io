@@ -1,5 +1,6 @@
 let credits_en_us = {
-    "movies": "Movies and TV Series",
+    "movies": "Movies, TV and Web Series",
+    "musicals": "Musicals",
     "games": "Videogames",
     "albums": "Albums",
     "singles": "Singles",
@@ -7,7 +8,8 @@ let credits_en_us = {
 }
 
 let credits_it_it = {
-    "movies": "Film e Serie TV",
+    "movies": "Film, Serie TV e Web Serie",
+    "musicals": "Musical",
     "games": "Videogiochi",
     "albums": "Album",
     "singles": "Singoli",
