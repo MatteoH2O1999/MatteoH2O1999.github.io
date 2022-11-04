@@ -4,13 +4,24 @@ import { describe, expect, test, beforeAll } from '@jest/globals';
 import mediainfo from 'mediainfo-wrapper';
 import getImageSize from 'image-size';
 import fs from 'fs';
+import defaults from '../nuxt.config'
 
 const creditFolders = [
     {tabName: 'Movies', folder: 'movies'}
 ]
 const desiredPosterRatio = 2/3;
+const locales = getLocales()
 
 const markdown = new Markdown(getOptions().markdown)
+
+function getLocales() {
+    let localeObject = defaults.i18n.locales;
+    let localeList = [];
+    localeObject.forEach(element => {
+        localeList.push(element.code);
+    })
+    return localeList;
+}
 
 function getRelativePaths(path) {
     const tmp = fs.readdirSync(path);
@@ -193,6 +204,52 @@ describe('Music credits', () => {
                     expect(parseInt(secondString)).toBeGreaterThanOrEqual(0);
                     expect(parseInt(secondString)).toBeLessThan(60);
                     expect(letterZ).toBe('Z');
+                })
+            })
+
+            test('has a "lang" attribute', () => {
+                let lang;
+                try {
+                    lang = jsonData.lang
+                } catch (error) {
+                    lang = null;
+                }
+                expect(lang).toBeTruthy();
+            })
+
+            describe('Localization (specified via "lang")', () => {
+                let lang;
+
+                beforeAll(() => {
+                    try {
+                        lang = jsonData.lang;
+                    } catch (error) {
+                        lang = null;
+                    }
+                })
+
+                describe.each(locales)('%s', (localeCode) => {
+                    let locale;
+
+                    beforeAll(() => {
+                        try {
+                            locale = lang[localeCode];
+                        } catch (error) {
+                            locale = null;
+                        }
+                    })
+
+                    test('is defined', () => {
+                        expect(locale).toBeTruthy();
+                    })
+
+                    test('has a valid "title" attribute', () => {
+                        expect(locale.title).toBeTruthy();
+                    })
+
+                    test('has a valid "description" attribute', () => {
+                        expect(locale.description).toBeTruthy();
+                    })
                 })
             })
         })
