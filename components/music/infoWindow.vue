@@ -1,6 +1,7 @@
 <template>
     <div class="additional-info-tab">
-        Test infoWindow {{ data }}
+        <h1>{{ title }}</h1>
+        {{ description }}
         <button @click="closeTab()">Test close</button>
     </div>
 </template>
@@ -16,6 +17,14 @@
         methods: {
             closeTab() {
                 this.$emit('closeTab');
+            }
+        },
+        computed: {
+            title() {
+                return this.data.lang[this.$i18n.locale].title;
+            },
+            description() {
+                return this.data.lang[this.$i18n.locale].description;
             }
         }
     }
