@@ -38,6 +38,7 @@
     width: 100%;
     aspect-ratio: 2 / 3;
     transition: transform 0.1s ease;
+    cursor: pointer;
 }
 
 .card-poster:hover {
