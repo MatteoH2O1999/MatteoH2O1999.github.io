@@ -2,7 +2,7 @@
     <div class="additional-info-tab">
         <h1>{{ title }}</h1>
         {{ description }}
-        <button @click="closeTab()">Test close</button>
+        <MusicInfoWindowCloseButton @closeTab="closeTab()" class="close-button-div"/>
     </div>
 </template>
 
@@ -33,5 +33,15 @@
 <style>
 .additional-info-tab {
     background-color: darkgrey;
+}
+
+.close-button-div {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.additional-info-tab h1 {
+    margin-top: 0;
 }
 </style>
