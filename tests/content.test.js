@@ -7,12 +7,12 @@ import fs from 'fs';
 import defaults from '../nuxt.config'
 
 const creditFolders = [
-    {tabName: 'Movies', folder: 'movies'}
-]
+    {tabName: 'Movies', folder: 'movies'},
+];
 const desiredPosterRatio = 2/3;
-const locales = getLocales()
+const locales = getLocales();
 
-const markdown = new Markdown(getOptions().markdown)
+const markdown = new Markdown(getOptions().markdown);
 
 function getLocales() {
     let localeObject = defaults.i18n.locales;
