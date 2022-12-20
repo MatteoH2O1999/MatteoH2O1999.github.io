@@ -13,7 +13,7 @@
                     {{ description }}
                 </div>
                 <div>
-                    Links
+                    <MusicLinks :data="this.data" />
                 </div>
             </div>
         </div>

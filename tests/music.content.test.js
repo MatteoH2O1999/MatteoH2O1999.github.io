@@ -11,6 +11,7 @@ const creditFolders = [
 ];
 const desiredPosterRatio = 2/3;
 const locales = getLocales();
+const musicPlatforms = {"youtube": "youtube"};
 
 const markdown = new Markdown(getOptions().markdown);
 
@@ -249,6 +250,136 @@ describe('Music credits', () => {
 
                     test('has a valid "description" attribute', () => {
                         expect(locale.description).toBeTruthy();
+                    })
+                })
+            })
+
+            test('has a "links" attribute', () => {
+                let links;
+                try {
+                    links = jsonData.releaseDate;
+                } catch (error) {
+                    links = null;
+                }
+                expect(links).toBeTruthy();
+            })
+
+            describe('Tracks and playlist links (specified via "links")', () => {
+                let links;
+
+                beforeAll(() => {
+                    try {
+                        links = jsonData.links;
+                    } catch (error) {
+                        links = null;
+                    }
+                })
+
+                test('has a boolean "track-order" attribute', () => {
+                    let order;
+                    try {
+                        order = links['track-order'];
+                    } catch (error) {
+                        order = null;
+                    }
+                    expect(order).toBeDefined();
+                    expect(typeof order).toBe('boolean');
+                })
+
+                test('has a "playlists" array', () => {
+                    let playlists;
+                    try {
+                        playlists = links.playlists;
+                    } catch (error) {
+                        playlists = null;
+                    }
+                    expect(playlists).toBeDefined();
+                    expect(playlists).toBeInstanceOf(Array);
+                })
+
+                describe('Playlists', () => {
+                    let playlists;
+
+                    beforeAll(() => {
+                        try {
+                            playlists = links.playlists;
+                        } catch (error) {
+                            playlists = null;
+                        }
+                    })
+
+                    test('no playlists mean a single track', () => {
+                        if (playlists.length === 0) {
+                            expect(links.tracks.length).toBe(1);
+                        }
+                    })
+
+                    test('each playlist has a valid platform and url', () => {
+                        playlists.forEach((playlist) => {
+                            expect(playlist).toHaveProperty('platform');
+                            expect(musicPlatforms).toHaveProperty(playlist.platform);
+                            expect(playlist).toHaveProperty('url');
+                            expect(playlist.url).toEqual(expect.stringContaining(musicPlatforms[playlist.platform]));
+                        })
+                    })
+                })
+
+                test('has a "tracks" array', () => {
+                    let tracks;
+                    try {
+                        tracks = links.tracks;
+                    } catch (error) {
+                        tracks = null;
+                    }
+                    expect(tracks).toBeDefined();
+                    expect(tracks).toBeInstanceOf(Array);
+                })
+
+                describe('Tracks', () => {
+                    let tracks;
+
+                    beforeAll(() => {
+                        try {
+                            tracks = links.tracks;
+                        } catch (error) {
+                            tracks = null;
+                        }
+                    })
+
+                    test('at least one track is defined', () => {
+                        expect(tracks.length).toBeGreaterThan(0);
+                    })
+
+                    test('one track mean no playlists', () => {
+                        if (tracks.length === 1) {
+                            expect(links.playlists.length).toBe(0);
+                        }
+                    })
+
+                    test('each track has a unique number', () => {
+                        const uniqueNumbers = [];
+                        tracks.forEach((track) => {
+                            expect(track).toHaveProperty('order');
+                            expect(uniqueNumbers).not.toContain(track.order);
+                        })
+                    })
+
+                    test('each track has a name', () => {
+                        tracks.forEach((track) => {
+                            expect(track).toHaveProperty('name');
+                        })
+                    })
+
+                    test('each track has at least one valid platform', () => {
+                        tracks.forEach((track) => {
+                            expect(track).toHaveProperty('url');
+                            const url = track.url;
+                            expect(Object.getOwnPropertyNames(url).length).toBeGreaterThan(0);
+                            Object.getOwnPropertyNames(url).forEach((data) => {
+                                expect(musicPlatforms).toHaveProperty(data);
+                                expect(url[data]).toEqual(expect.stringContaining(musicPlatforms[data]));
+                            })
+                        })
                     })
                 })
             })
