@@ -32,7 +32,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^29.3.1",
     "image-size": "^1.0.2",
-    "jest": "^29.4.1",
+    "jest": "^29.4.2",
     "jest-environment-jsdom": "^29.4.1",
     "mediainfo-wrapper": "^1.2.0",
     "vue-jest": "^3.0.4"
