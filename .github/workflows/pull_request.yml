@@ -9,7 +9,7 @@ permissions:
 
 env:
   PR_AUTHOR: ${{ github.event.pull_request.user.login }}
-  NODE_VERSION: 16
+  NODE_VERSION: 18
 
 jobs:
   test:
