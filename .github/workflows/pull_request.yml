@@ -11,6 +11,10 @@ env:
   PR_AUTHOR: ${{ github.event.pull_request.user.login }}
   NODE_VERSION: 18
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   clean:
     name: Clean contribution if not authorized
@@ -43,23 +47,6 @@ jobs:
           pr-comment: This repository is a personal website and as such it does not accept pull requests.
           log-output: true
 
-      # If authorized populate cache
-
-      - name: Checkout code
-        if: ${{ steps.emit.outputs.result == 'true' }}
-        uses: actions/checkout@v3
-        with:
-          submodules: 'recursive'
-      - name: Setup node
-        if: ${{ steps.emit.outputs.result == 'true' }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-      - name: Install production and development dependencies
-        if: ${{ steps.emit.outputs.result == 'true' }}
-        run: npm ci --include=dev
-
   test:
     name: Test website
     runs-on: ubuntu-latest
@@ -76,7 +63,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
       - name: Install production and development dependencies
-        run: npm ci --include=dev
+        run: npm ci
       - name: Run tests
         run: npm run test-ci
         env:
@@ -85,7 +72,7 @@ jobs:
   build:
     name: Test build website
     runs-on: ubuntu-latest
-    needs: test
+    needs: clean
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -95,8 +82,51 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
       - name: Install production dependencies
         run: npm ci --omit=dev
       - name: Test build with Nuxt
         run: npm run generate
+      - name: Upload generated pages
+        uses: actions/upload-artifact@v3
+        with:
+          path: dist/
+          name: pages
+          retention-days: 1
+
+  screenshots:
+      name: Generate screenshots
+      runs-on: ${{ matrix.os }}
+      strategy:
+        matrix:
+          os: [ubuntu-latest, macos-13]
+        fail-fast: false
+      needs: [build, test]
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v3
+          with:
+            submodules: 'recursive'
+        - name: Download generated pages
+          uses: actions/download-artifact@v3
+          with:
+            name: pages
+            path: dist
+        - name: Setup node
+          uses: actions/setup-node@v3
+          with:
+            node-version: ${{ env.NODE_VERSION }}
+            cache: 'npm'
+        - name: Install production and development dependencies
+          run: npm ci
+        - name: Generate screenshots
+          id: screenshots
+          run: npm run screenshots
+          env:
+            TOKEN: ${{ github.token }}
+        - name: Upload screenshots
+          if: ${{ steps.screenshots.outputs.screenshots != '' }}
+          uses: actions/upload-artifact@v3
+          with:
+            retention-days: 1
+            name: ${{ steps.screenshots.outputs.artifact_name }}
+            path: ${{ steps.screenshots.outputs.screenshots }}
