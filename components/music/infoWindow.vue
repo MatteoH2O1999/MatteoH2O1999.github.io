@@ -59,7 +59,7 @@ export default {
 }
 
 .additional-info-tab h2 {
-    margin: 10px;
+    margin: 10px 20px 10px;
 }
 
 .info-window-header {
