@@ -10,7 +10,7 @@ def f():
 	pass
 ```
 ```ts
-export class Class {
+export class Class_1 {
 	readonly b: string;
 
 	constructor(a: string) {
