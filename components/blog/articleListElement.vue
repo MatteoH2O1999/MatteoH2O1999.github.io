@@ -85,6 +85,7 @@ export default {
     height: 30vh;
     width: 20vw;
     margin-right: 50px;
+    max-height: 15vw;
 }
 
 .article-image-card {
