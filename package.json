@@ -9,7 +9,8 @@
     "generate": "nuxt generate",
     "test": "jest --coverage=false",
     "test-ci": "jest --coverage=false --reporters='@matteoh2o1999/github-actions-jest-reporter'",
-    "screenshots": "node ./.github/scripts/generate_screenshots.js"
+    "screenshots": "node ./.github/scripts/generate_screenshots.js",
+    "comment": "node ./.github/scripts/pr_comment.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
@@ -37,6 +38,7 @@
     "@actions/tool-cache": "^2.0.1",
     "@matteoh2o1999/github-actions-jest-reporter": "^2.0.0",
     "@vue/test-utils": "^1.3.6",
+    "axios": "^1.4.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^29.5.0",
     "chromedriver": "^113.0.0",
