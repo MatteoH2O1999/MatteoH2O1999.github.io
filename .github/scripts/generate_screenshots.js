@@ -12,6 +12,7 @@ import { fileURLToPath } from 'url';
 import { Builder, until, By, Browser } from 'selenium-webdriver';
 import * as Chrome from 'selenium-webdriver/chrome.js';
 import defaults from '../../nuxt.config.js';
+import { escapePath } from './utils.js';
 
 const prNumber = github.context.payload.pull_request?.number;
 if (!prNumber && process.env.GITHUB_ACTIONS) {
@@ -148,8 +149,8 @@ for (const browser of browsers) {
         const heightDiff = Math.ceil(parseFloat(await driver.executeScript('return window.outerHeight - window.innerHeight')));
         await driver.manage().window().setRect({width: width, height: currentHeight + heightDiff});
 
-        const escapedPath = page.replace(/\//g, ' - ').replace(/\?/, '&');
-        const screenshotPath = path.join(screenshotDirectory, `${escapedPath.endsWith(' - ') ? escapedPath.concat('index') : escapedPath} (${browser}).png`);
+        const escapedPath = escapePath(page);
+        const screenshotPath = path.join(screenshotDirectory, `${escapedPath} (${browser}).png`);
         const screenshot = await driver.findElement(By.css('body')).takeScreenshot();
         await fs.promises.writeFile(screenshotPath, screenshot, {encoding: 'base64'});
         screenshots.push(screenshotPath);

@@ -130,3 +130,30 @@ jobs:
             retention-days: 1
             name: ${{ steps.screenshots.outputs.artifact_name }}
             path: ${{ steps.screenshots.outputs.screenshots }}
+
+  pr_comment:
+    name: Upload screenshots and create PR comment
+    runs-on: ubuntu-latest
+    needs: screenshots
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+      - name: Download screenshots
+        uses: actions/download-artifact@v3
+        with:
+          path: screenshots
+      - name: Remove pages artifact
+        run: rm -rf screenshots/pages
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      - name: Install production and development dependencies
+        run: npm ci
+      - name: Upload screenshots and create comment
+        run: npm run comment
+        env:
+          TOKEN: ${{ github.token }}
