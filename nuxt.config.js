@@ -22,7 +22,7 @@ export default {
         ...i18nHead.meta
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' },
         ...i18nHead.link
       ],
     }
