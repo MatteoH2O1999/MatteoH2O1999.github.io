@@ -1,6 +1,7 @@
 <template>
     <div class="article-figure">
-        <nuxt-img format="webp" sizes="xs:85vw sm:85vw md:85vw lg:50vw xl:50vw xxl:50vw" class="blog-article-image" :src="this.imgPath" :alt="this.alt"/>
+        <nuxt-img v-if="this.imgPath.startsWith('/')" format="webp" sizes="xs:85vw sm:85vw md:85vw lg:50vw xl:50vw xxl:50vw" class="blog-article-image" :src="this.imgPath" :alt="this.alt"/>
+        <img class="blog-article-image" v-else :src="this.imgPath" :alt="this.alt"/>
         <p class="figure-description">
             {{this.description}}
         </p>
