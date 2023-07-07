@@ -8,6 +8,7 @@ import defaults from '../nuxt.config'
 
 const creditFolders = [
     {tabName: 'Movies', folder: 'movies'},
+    {tabName: 'Live events', folder: 'live'},
 ];
 const desiredPosterRatio = 2/3;
 const locales = getLocales();

@@ -27,6 +27,10 @@ function getMusicExcerpt(article, instance) {
     let type;
     if (article.dir.startsWith('/music/movies')) {
         type = instance.$t('musicBlog.score');
+    } else if (article.dir.startsWith('/music/live')) {
+        type = instance.$t('musicBlog.live');
+    } else {
+        throw new Error(`Unexpected dir: ${article.dir}`);
     }
     const title = `${type}: ${article.lang[instance.$i18n.locale].title}`
     const img = article.imgPath;
