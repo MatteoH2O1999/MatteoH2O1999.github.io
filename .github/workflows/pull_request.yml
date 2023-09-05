@@ -54,7 +54,7 @@ jobs:
     needs: clean
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: 'recursive'
       - name: Setup node
@@ -75,7 +75,7 @@ jobs:
     needs: clean
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: 'recursive'
       - name: Setup node
@@ -103,7 +103,7 @@ jobs:
       needs: [build, test]
       steps:
         - name: Checkout code
-          uses: actions/checkout@v3
+          uses: actions/checkout@v4
           with:
             submodules: 'recursive'
         - name: Download generated pages
@@ -137,7 +137,7 @@ jobs:
     needs: screenshots
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: 'recursive'
       - name: Download screenshots
