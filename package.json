@@ -29,7 +29,7 @@
     "vue": "^2.7.14",
     "vue-server-renderer": "^2.7.14",
     "vue-template-compiler": "^2.7.14",
-    "webpack": "^4.46.0"
+    "webpack": "^4.47.0"
   },
   "devDependencies": {
     "@actions/core": "^1.10.0",
