@@ -2,7 +2,7 @@
     <div class="article-figure">
         <nuxt-img v-if="this.imgPath.startsWith('/')" format="webp" sizes="xs:85vw sm:85vw md:85vw lg:50vw xl:50vw xxl:50vw" class="blog-article-image" :src="this.imgPath" :alt="this.alt"/>
         <img class="blog-article-image" v-else :src="this.imgPath" :alt="this.alt"/>
-        <p class="figure-description">
+        <p v-if="this.description" class="figure-description">
             {{this.description}}
         </p>
     </div>
@@ -26,7 +26,7 @@ export default {
 <style>
 .blog-article-image {
     width: 100%;
-    max-height: 90vh;
+    max-height: 60vh;
     object-fit: contain;
     aspect-ratio: auto 1 / 1;
 }

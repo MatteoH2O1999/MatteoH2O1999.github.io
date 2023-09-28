@@ -40,6 +40,20 @@ export default {
             context.error({statusCode: 500, message: 'Unexpected error. Could not find excerpt text.'});
         }
         return {page, date, excerpt};
+    },
+    mounted() {
+        const elements = document.getElementsByClassName('blog-article');
+        if (elements.length !== 1) {
+            throw 'WTF???';
+        }
+        const article = elements.item(0);
+        const articleElements = [...article.children];
+        for (const child of articleElements) {
+            articleElements.push(...child.children);
+            if (child.tagName === 'STRONG') {
+                child.classList.add('blue-text', 'semi-bold-text');
+            }
+        }
     }
 }
 </script>
@@ -55,6 +69,12 @@ export default {
 
 .blog-article h1 {
     font-size: 2em;
+}
+
+.blog-article a {
+    text-decoration: underline;
+    color: var(--bold-blue);
+    text-underline-position: under;
 }
 
 .blog-article-date {
