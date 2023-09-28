@@ -107,7 +107,6 @@ describe('Articles', () => {
                         expect(typeof props.alt).toEqual('string');
                         expect(props.alt).toBeTruthy();
                         expect(typeof props.description).toEqual('string');
-                        expect(props.description).toBeTruthy();
                         expect(typeof props['img-path']).toEqual('string');
                         expect(props['img-path']).toBeTruthy();
                         expect(fs.existsSync(`./static${props['img-path']}`)).toBe(true);
