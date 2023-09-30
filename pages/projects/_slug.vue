@@ -27,9 +27,11 @@ export default {
             page = await context.$content('articles', context.i18n.locale, {deep: true}).where({slug: context.params.slug}).fetch();
         } catch (error) {
             context.error({statusCode: 404, message: 'Invalid article resource'});
+            return;
         }
         if (page.length !== 1) {
             context.error({statusCode: 404, message: 'Invalid article resource'});
+            return;
         }
         page = page.at(0);
         let date = new Date(page.createdAt);
