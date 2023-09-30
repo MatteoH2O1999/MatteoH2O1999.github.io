@@ -27,6 +27,10 @@ updates:
       versions: ['>=2.0.0']
     - dependency-name: webpack
       versions: ['>=5.0.0']
+    - dependency-name: remark-math
+      versions: ['>=5.0.0']
+    - dependency-name: rehype-mathjax
+      versions: ['>=4.0.0']
 
 # Fetch and update latest `github-actions` pkgs
 - package-ecosystem: github-actions
