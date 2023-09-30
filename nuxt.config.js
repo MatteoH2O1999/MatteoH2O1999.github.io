@@ -78,7 +78,17 @@ export default {
     markdown: {
         prism: {
             theme: 'prism-themes/themes/prism-material-oceanic.css'
-        }
+        },
+        remarkPlugins: [
+            'remark-math'
+        ],
+        rehypePlugins: [
+            ['rehype-mathjax', {
+                tex: {
+                    tags: 'ams'
+                }
+            }]
+        ]
     }
   },
 
@@ -106,5 +116,13 @@ export default {
     lazy: true,
     langDir: '~/lang/',
     baseUrl:'https://matteoh2o1999.github.io'
+    },
+
+    vue: {
+        config: {
+            ignoredElements: [
+                'mjx-container'
+            ]
+        }
     }
 }

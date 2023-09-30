@@ -80,4 +80,8 @@ export default {
 .blog-article-date {
     font-style: italic;
 }
+
+.blog-article .math {
+    overflow-x: auto;
+}
 </style>
