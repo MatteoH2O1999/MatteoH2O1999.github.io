@@ -1,0 +1,31 @@
+---
+id: BeyondAllReason
+imgPath: "/music/cards/games/beyond_all_reason.jpg"
+releaseDate: "2023-10-05T00:00:00Z"
+createdAt: "2023-10-05T00:00:00Z"
+lang:
+    en-us:
+        title: Beyond All Reason (BAR)
+        description: An open-source free RTS which aims to be a spiritual successor to titles such as Total Annihilation and Supreme Commander.
+    it-it:
+        title: Beyond All Reason (BAR)
+        description : Un gioco gratis open-source di strategia che vuole essere un successore spirituale di titoli come Total Annihilation e Supreme Commander.
+links:
+    track-order: false
+    playlists:
+        - platform: Youtube
+          url: https://www.youtube.com/playlist?list=PLCPtA9A-ZWJFr3G0IS2_DmAiVdAdoKADw
+    tracks:
+        - name: Game of Chicken
+          order: 1
+          url:
+            Youtube: https://www.youtube.com/watch?v=sozu4zdnqe8
+        - name: All Hands on Deck
+          order: 2
+          url:
+            Youtube: https://www.youtube.com/watch?v=7RtRR4jYnOc
+        - name: Mother Of All Raptors
+          order: 3
+          url:
+            Youtube: https://www.youtube.com/watch?v=Q0DZd0l2DMs
+---

@@ -1,6 +1,7 @@
 <template>
     <div class="music-credits">
         <MusicCreditTab subFolder="movies" :tabTitle="this.musicCreditsTabs.movies" />
+        <MusicCreditTab subFolder="games" :tabTitle="this.musicCreditsTabs.games" />
         <MusicCreditTab subFolder="live" :tabTitle="this.musicCreditsTabs.live" />
     </div>
 </template>

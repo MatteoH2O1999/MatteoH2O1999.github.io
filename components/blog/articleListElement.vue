@@ -29,6 +29,8 @@ function getMusicExcerpt(article, instance) {
         type = instance.$t('musicBlog.score');
     } else if (article.dir.startsWith('/music/live')) {
         type = instance.$t('musicBlog.live');
+    } else if (article.dir.startsWith('/music/games')) {
+        type = instance.$t('musicBlog.games');
     } else {
         throw new Error(`Unexpected dir: ${article.dir}`);
     }
