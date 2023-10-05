@@ -12,7 +12,7 @@ let credits_en_us = {
 
 let credits_it_it = {
     movies: "Film, Serie TV e Web",
-    live: "Dal vivo",
+    live: "Eventi dal vivo",
     games: "Videogiochi",
     albums: "Album",
     singles: "Singoli",
