@@ -2,6 +2,7 @@
     <article class="blog-article">
         <h1>{{page.title}}</h1>
         <div class="blog-article-date">{{date}}</div>
+        <BlogArticleImage alt="" description="" :imgPath="this.page.previewImg" />
         <nuxt-content :document="page" />
     </article>
 </template>
