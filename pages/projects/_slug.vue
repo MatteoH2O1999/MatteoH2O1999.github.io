@@ -16,7 +16,7 @@ export default {
     },
     head() {
         return {
-            title: `[WIP] Matteo Dell'Acqua | ${this.page.title}`,
+            title: `Matteo Dell'Acqua | ${this.page.title}`,
             meta: [
                 {name: 'description', hid: 'description', content: this.excerpt}
             ]
