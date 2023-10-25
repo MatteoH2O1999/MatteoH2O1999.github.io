@@ -23,7 +23,7 @@
     "@nuxtjs/i18n": "^7.3.1",
     "@nuxtjs/svg": "^0.4.1",
     "core-js": "^3.33.1",
-    "nuxt": "^2.17.1",
+    "nuxt": "^2.17.2",
     "postcss": "^8.4.31",
     "prism-themes": "^1.9.0",
     "rehype-mathjax": "^3.1.0",
