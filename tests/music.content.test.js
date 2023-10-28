@@ -369,6 +369,7 @@ describe('Music credits', () => {
                         tracks.forEach((track) => {
                             expect(track).toHaveProperty('order');
                             expect(uniqueNumbers).not.toContain(track.order);
+                            uniqueNumbers.push(track.order)
                         });
                     });
 
