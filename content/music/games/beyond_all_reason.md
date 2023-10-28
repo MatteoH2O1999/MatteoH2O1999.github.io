@@ -1,8 +1,8 @@
 ---
 id: BeyondAllReason
 imgPath: "/music/cards/games/beyond_all_reason.jpg"
-releaseDate: "2023-10-05T00:00:00Z"
-createdAt: "2023-10-05T00:00:00Z"
+releaseDate: "2023-10-26T00:00:00Z"
+createdAt: "2023-10-26T00:00:00Z"
 lang:
     en-us:
         title: Beyond All Reason (BAR)
@@ -16,16 +16,20 @@ links:
         - platform: Youtube
           url: https://www.youtube.com/playlist?list=PLCPtA9A-ZWJFr3G0IS2_DmAiVdAdoKADw
     tracks:
-        - name: Game of Chicken
+        - name: fooBAR (Menu Ver.)
           order: 1
+          url:
+            Youtube: https://www.youtube.com/watch?v=pIFIUATebJc
+        - name: Game of Chicken
+          order: 2
           url:
             Youtube: https://www.youtube.com/watch?v=sozu4zdnqe8
         - name: All Hands on Deck
-          order: 2
+          order: 3
           url:
             Youtube: https://www.youtube.com/watch?v=7RtRR4jYnOc
         - name: Mother Of All Raptors
-          order: 3
+          order: 4
           url:
             Youtube: https://www.youtube.com/watch?v=Q0DZd0l2DMs
 ---
