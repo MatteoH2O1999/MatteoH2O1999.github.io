@@ -32,4 +32,8 @@ links:
           order: 4
           url:
             Youtube: https://www.youtube.com/watch?v=Q0DZd0l2DMs
+        - name: fooBAR (Battle Ver.)
+          order: 5
+          url:
+            Youtube: https://www.youtube.com/watch?v=B8WK30bQOKc
 ---
