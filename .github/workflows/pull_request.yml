@@ -86,7 +86,7 @@ jobs:
       - name: Test build with Nuxt
         run: npm run generate
       - name: Upload generated pages
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: dist/
           name: pages
@@ -123,7 +123,7 @@ jobs:
             TOKEN: ${{ github.token }}
         - name: Upload screenshots
           if: ${{ steps.screenshots.outputs.screenshots != '' }}
-          uses: actions/upload-artifact@v3
+          uses: actions/upload-artifact@v4
           with:
             retention-days: 1
             name: ${{ steps.screenshots.outputs.artifact_name }}
