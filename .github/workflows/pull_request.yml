@@ -106,7 +106,7 @@ jobs:
           with:
             submodules: 'recursive'
         - name: Download generated pages
-          uses: actions/download-artifact@v3
+          uses: actions/download-artifact@v4
           with:
             name: pages
             path: dist
@@ -139,7 +139,7 @@ jobs:
         with:
           submodules: 'recursive'
       - name: Download screenshots
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           path: screenshots
       - name: Remove pages artifact
