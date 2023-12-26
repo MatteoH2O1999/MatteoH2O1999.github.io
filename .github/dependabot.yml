@@ -33,6 +33,18 @@ updates:
       versions: ['>=5.0.0']
     - dependency-name: rehype-mathjax
       versions: ['>=4.0.0']
+  groups:
+    nuxtjs:
+      patterns:
+        - "@nuxt/*"
+        - "@nuxtjs/*"
+        - "nuxt"
+    vue:
+      patterns:
+        - "vue*"
+    font-awesome:
+      patterns:
+        - "@fortawesome/*"
 
 # Fetch and update latest `github-actions` pkgs
 - package-ecosystem: github-actions
