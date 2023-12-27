@@ -27,6 +27,8 @@ updates:
       versions: ['>=2.0.0']
     - dependency-name: '@nuxt/image'
       versions: ['>=1.0.0']
+    - dependency-name: '@nuxtjs/i18n'
+      versions: ['>=8.0.0']
     - dependency-name: webpack
       versions: ['>=5.0.0']
     - dependency-name: remark-math
