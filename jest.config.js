@@ -21,6 +21,6 @@ export default {
     '<rootDir>/assets/**/*.js',
     '<rootDir>/lang/**/*.js'
   ],
-  testEnvironment: 'jsdom',
+  testEnvironment: './env',
   testMatch: ['<rootDir>/tests/**/*.js']
 }
