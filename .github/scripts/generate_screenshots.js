@@ -127,7 +127,7 @@ for (const browser of browsers) {
     core.info('Creating Selenium instance...');
     const driver = await new Builder()
         .forBrowser(browser)
-        .setChromeOptions(chromeOptions.headless())
+        .setChromeOptions(chromeOptions.addArguments('--headless=new'))
         .build();
     await driver.manage().window().setRect({width: 1920, height: 1});
     core.info('Selenium instance ready');
