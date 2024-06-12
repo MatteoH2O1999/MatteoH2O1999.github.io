@@ -1,8 +1,8 @@
 ---
 id: BeyondAllReason
 imgPath: "/music/cards/games/beyond_all_reason.jpg"
-releaseDate: "2023-10-26T00:00:00Z"
-createdAt: "2023-10-26T00:00:00Z"
+releaseDate: "2024-06-12T00:00:00Z"
+createdAt: "2024-06-12T00:00:00Z"
 lang:
     en-us:
         title: Beyond All Reason (BAR)
