@@ -6,7 +6,7 @@
         </div>
         <div class="info-window-content">
             <div class="info-window-image-div">
-                <nuxt-img format="webp" sizes="xs:90vw sm:90vw md:25vw lg:25vw xl:25vw xxl:25vw" :src="this.data.imgPath" class="info-window-image" :alt="this.$t('musicCreditsTabs.altPoster').concat(' ', this.title)" />
+                <nuxt-img format="webp" sizes="xs:90vw sm:90vw md:25vw lg:25vw xl:25vw xxl:10000px" :src="this.data.imgPath" class="info-window-image" :alt="this.$t('musicCreditsTabs.altPoster').concat(' ', this.title)" />
             </div>
             <div class="info-window-text">
                 <div>

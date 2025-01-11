@@ -1,6 +1,6 @@
 <template>
     <div>
-        <nuxt-img format="webp" sizes="xs:40vw sm:40vw md:19vw lg:15vw xl:15vw xxl:15vw" :src="this.data.imgPath" class="card-poster" @click="showInfo();" tabindex="0" role="button" @keydown="keydown($event);" aria-haspopup="dialog" :alt="this.altCard"/>
+        <nuxt-img format="webp" sizes="xs:40vw sm:40vw md:19vw lg:15vw xl:15vw xxl:10000px" :src="this.data.imgPath" class="card-poster" @click="showInfo();" tabindex="0" role="button" @keydown="keydown($event);" aria-haspopup="dialog" :alt="this.altCard"/>
         <div class="additional-info">
             <div class="additional-info-shadow" ref="shadow" @click="hideInfo();"></div>
             <div class="additional-info-window" ref="infoWindow">
