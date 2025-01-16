@@ -24,12 +24,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          submodules: 'recursive'
+          persist-credentials: false
+          submodules: "recursive"
       - name: Setup node
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+          cache: "npm"
       - name: Install production and development dependencies
         run: npm ci
       - name: Run tests
@@ -46,12 +47,13 @@ jobs:
       - name: Checkout website repository
         uses: actions/checkout@v4
         with:
+          persist-credentials: false
           submodules: recursive
       - name: Setup node
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+          cache: "npm"
       - name: Install production dependencies
         run: npm ci --omit=dev
       - name: Build with Nuxt

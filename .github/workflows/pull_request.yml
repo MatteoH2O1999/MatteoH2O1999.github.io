@@ -3,10 +3,6 @@ name: Check pull request
 on:
   pull_request:
 
-permissions:
-  pull-requests: write
-  contents: read
-
 env:
   PR_AUTHOR: ${{ github.event.pull_request.user.login }}
   NODE_VERSION: 20
@@ -56,7 +52,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          submodules: 'recursive'
+          persist-credentials: false
+          submodules: "recursive"
       - name: Setup node
         uses: actions/setup-node@v4
         with:
@@ -76,7 +73,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          submodules: 'recursive'
+          persist-credentials: false
+          submodules: "recursive"
       - name: Setup node
         uses: actions/setup-node@v4
         with:
@@ -93,51 +91,55 @@ jobs:
           retention-days: 1
 
   screenshots:
-      name: Generate screenshots
-      runs-on: ${{ matrix.os }}
-      strategy:
-        matrix:
-          os: [ubuntu-latest, macos-latest]
-        fail-fast: false
-      needs: [build, test]
-      steps:
-        - name: Checkout code
-          uses: actions/checkout@v4
-          with:
-            submodules: 'recursive'
-        - name: Download generated pages
-          uses: actions/download-artifact@v4
-          with:
-            name: pages
-            path: dist
-        - name: Setup node
-          uses: actions/setup-node@v4
-          with:
-            node-version: ${{ env.NODE_VERSION }}
-        - name: Install production and development dependencies
-          run: npm ci
-        - name: Generate screenshots
-          id: screenshots
-          run: npm run screenshots
-          env:
-            TOKEN: ${{ github.token }}
-        - name: Upload screenshots
-          if: ${{ steps.screenshots.outputs.screenshots != '' }}
-          uses: actions/upload-artifact@v4
-          with:
-            retention-days: 1
-            name: ${{ steps.screenshots.outputs.artifact_name }}
-            path: ${{ steps.screenshots.outputs.screenshots }}
+    name: Generate screenshots
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+      fail-fast: false
+    needs: [build, test]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          submodules: "recursive"
+      - name: Download generated pages
+        uses: actions/download-artifact@v4
+        with:
+          name: pages
+          path: dist
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install production and development dependencies
+        run: npm ci
+      - name: Generate screenshots
+        id: screenshots
+        run: npm run screenshots
+        env:
+          TOKEN: ${{ github.token }}
+      - name: Upload screenshots
+        if: ${{ steps.screenshots.outputs.screenshots != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          retention-days: 1
+          name: ${{ steps.screenshots.outputs.artifact_name }}
+          path: ${{ steps.screenshots.outputs.screenshots }}
 
   pr_comment:
     name: Upload screenshots and create PR comment
     runs-on: ubuntu-latest
     needs: screenshots
+    permissions:
+      pull-requests: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          submodules: 'recursive'
+          persist-credentials: false
+          submodules: "recursive"
       - name: Download screenshots
         uses: actions/download-artifact@v4
         with:
