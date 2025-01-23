@@ -1,8 +1,8 @@
 ---
 id: BeyondAllReason
 imgPath: "/music/cards/games/beyond_all_reason.jpg"
-releaseDate: "2024-06-12T00:00:00Z"
-createdAt: "2024-06-12T00:00:00Z"
+releaseDate: "2025-01-23T00:00:00Z"
+createdAt: "2025-01-23T00:00:00Z"
 lang:
     en-us:
         title: Beyond All Reason (BAR)
@@ -24,20 +24,28 @@ links:
           order: 2
           url:
             Youtube: https://www.youtube.com/watch?v=sozu4zdnqe8
-        - name: All Hands on Deck
+        - name: From the Ashes
           order: 3
           url:
-            Youtube: https://www.youtube.com/watch?v=7RtRR4jYnOc
-        - name: Mother Of All Raptors
+            Youtube: https://www.youtube.com/watch?v=ETBIy6zWsfk
+        - name: All Hands on Deck
           order: 4
           url:
-            Youtube: https://www.youtube.com/watch?v=Q0DZd0l2DMs
-        - name: fooBAR (Battle Ver.)
+            Youtube: https://www.youtube.com/watch?v=7RtRR4jYnOc
+        - name: Martial Prowess
           order: 5
           url:
-            Youtube: https://www.youtube.com/watch?v=B8WK30bQOKc
-        - name: From the Ashes
+            Youtube: https://www.youtube.com/watch?v=5tw_nHHhkxE
+        - name: fooBAR (Battle Ver.)
           order: 6
           url:
-            Youtube: https://www.youtube.com/watch?v=ETBIy6zWsfk
+            Youtube: https://www.youtube.com/watch?v=B8WK30bQOKc
+        - name: Mother Of All Raptors
+          order: 7
+          url:
+            Youtube: https://www.youtube.com/watch?v=Q0DZd0l2DMs
+        - name: Father Of All Scavengers
+          order: 8
+          url:
+            Youtube: https://www.youtube.com/watch?v=wWTGwDH_VXI
 ---
