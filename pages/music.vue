@@ -24,12 +24,12 @@ export default {
     async asyncData(context) {
         const musicCreditsTabs = context.app.i18n.t('musicCreditsTabs');
         return {musicCreditsTabs}
-    }
+    },
+    mounted() {
+        document.documentElement.style.scrollbarGutter = "stable";
+    },
+    beforeDestroy() {
+        document.documentElement.style.scrollbarGutter = "auto";
+    },
 }
 </script>
-
-<style>
-:root {
-    scrollbar-gutter: stable;
-}
-</style>
