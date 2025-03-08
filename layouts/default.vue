@@ -66,6 +66,7 @@ body h1, body h2, body h3, body h4, body h5, body h6 {
     --darker-white: #eeeeee;
     --gray: #505050;
     --black-blue-shadow: #050508;
+    scrollbar-gutter: stable;
 }
 
 .page-enter-active,
