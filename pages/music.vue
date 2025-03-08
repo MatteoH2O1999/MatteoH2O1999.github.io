@@ -27,3 +27,9 @@ export default {
     }
 }
 </script>
+
+<style>
+:root {
+    scrollbar-gutter: stable;
+}
+</style>
