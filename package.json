@@ -41,7 +41,7 @@
     "@matteoh2o1999/github-actions-jest-reporter": "^3.0.0",
     "@nuxt/types": "^2.18.1",
     "@vue/test-utils": "^2.4.6",
-    "axios": "^1.8.3",
+    "axios": "^1.8.4",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^29.7.0",
     "chromedriver": "^134.0.3",
