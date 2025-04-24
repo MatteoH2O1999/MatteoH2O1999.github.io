@@ -44,7 +44,7 @@
     "axios": "^1.8.4",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^29.7.0",
-    "chromedriver": "^135.0.2",
+    "chromedriver": "^135.0.3",
     "image-size": "^2.0.2",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
