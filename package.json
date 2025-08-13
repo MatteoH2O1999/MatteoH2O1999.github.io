@@ -44,12 +44,12 @@
     "axios": "^1.11.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^30.0.5",
-    "chromedriver": "^138.0.5",
+    "chromedriver": "^139.0.0",
     "image-size": "^2.0.2",
     "jest": "^30.0.5",
     "jest-environment-jsdom": "^30.0.5",
     "mediainfo-wrapper": "^1.2.0",
-    "selenium-webdriver": "^4.34.0",
+    "selenium-webdriver": "^4.35.0",
     "tree-kill": "^1.2.2",
     "vue-jest": "^3.0.4"
   }
