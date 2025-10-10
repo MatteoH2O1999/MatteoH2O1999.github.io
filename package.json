@@ -22,7 +22,7 @@
     "@nuxt/image": "^0.7.2",
     "@nuxtjs/i18n": "^7.3.1",
     "@nuxtjs/svg": "^0.4.1",
-    "core-js": "^3.45.1",
+    "core-js": "^3.46.0",
     "nuxt": "^2.18.0",
     "postcss": "^8.5.6",
     "prism-themes": "^1.9.0",
