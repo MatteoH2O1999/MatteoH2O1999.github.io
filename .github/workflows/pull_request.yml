@@ -105,7 +105,7 @@ jobs:
           persist-credentials: false
           submodules: "recursive"
       - name: Download generated pages
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: pages
           path: dist
@@ -141,7 +141,7 @@ jobs:
           persist-credentials: false
           submodules: "recursive"
       - name: Download screenshots
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           path: screenshots
       - name: Remove pages artifact
