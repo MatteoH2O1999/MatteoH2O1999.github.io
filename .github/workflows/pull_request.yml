@@ -38,7 +38,7 @@ jobs:
             return result
       - name: Clean contribution
         if: ${{ steps.emit.outputs.result == 'false' }}
-        uses: dessant/repo-lockdown@v4
+        uses: dessant/repo-lockdown@v5
         with:
           pr-comment: This repository is a personal website and as such it does not accept pull requests.
           log-output: true
