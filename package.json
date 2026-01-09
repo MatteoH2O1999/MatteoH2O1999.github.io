@@ -34,10 +34,10 @@
     "webpack": "^4.47.0"
   },
   "devDependencies": {
-    "@actions/core": "^2.0.1",
+    "@actions/core": "^2.0.2",
     "@actions/exec": "^2.0.0",
-    "@actions/github": "^6.0.1",
-    "@actions/tool-cache": "^2.0.2",
+    "@actions/github": "^7.0.0",
+    "@actions/tool-cache": "^3.0.0",
     "@matteoh2o1999/github-actions-jest-reporter": "^4.0.0",
     "@nuxt/types": "^2.18.1",
     "@vue/test-utils": "^2.4.6",
