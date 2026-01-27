@@ -36,7 +36,7 @@
   "devDependencies": {
     "@actions/core": "^2.0.2",
     "@actions/exec": "^2.0.0",
-    "@actions/github": "^7.0.0",
+    "@actions/github": "^8.0.0",
     "@actions/tool-cache": "^3.0.0",
     "@matteoh2o1999/github-actions-jest-reporter": "^4.0.0",
     "@nuxt/types": "^2.18.1",
