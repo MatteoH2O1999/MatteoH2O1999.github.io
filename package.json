@@ -34,14 +34,14 @@
     "webpack": "^4.47.0"
   },
   "devDependencies": {
-    "@actions/core": "^2.0.2",
+    "@actions/core": "^2.0.3",
     "@actions/exec": "^2.0.0",
-    "@actions/github": "^8.0.0",
-    "@actions/tool-cache": "^3.0.0",
+    "@actions/github": "^9.0.0",
+    "@actions/tool-cache": "^3.0.1",
     "@matteoh2o1999/github-actions-jest-reporter": "^4.0.0",
     "@nuxt/types": "^2.18.1",
     "@vue/test-utils": "^2.4.6",
-    "axios": "^1.13.3",
+    "axios": "^1.13.4",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^30.2.0",
     "chromedriver": "^144.0.0",
