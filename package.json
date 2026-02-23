@@ -34,22 +34,22 @@
     "webpack": "^4.47.0"
   },
   "devDependencies": {
-    "@actions/core": "^2.0.3",
+    "@actions/core": "^3.0.0",
     "@actions/exec": "^3.0.0",
     "@actions/github": "^9.0.0",
-    "@actions/tool-cache": "^3.0.1",
+    "@actions/tool-cache": "^4.0.0",
     "@matteoh2o1999/github-actions-jest-reporter": "^4.0.0",
     "@nuxt/types": "^2.18.1",
     "@vue/test-utils": "^2.4.6",
-    "axios": "^1.13.4",
+    "axios": "^1.13.5",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^30.2.0",
-    "chromedriver": "^144.0.1",
+    "chromedriver": "^145.0.5",
     "image-size": "^2.0.2",
     "jest": "^30.2.0",
     "jest-environment-jsdom": "^30.2.0",
     "mediainfo-wrapper": "^1.2.0",
-    "selenium-webdriver": "^4.40.0",
+    "selenium-webdriver": "^4.41.0",
     "tree-kill": "^1.2.2",
     "vue-jest": "^3.0.4"
   }
