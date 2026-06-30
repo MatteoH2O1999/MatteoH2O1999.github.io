@@ -35,7 +35,7 @@ updates:
       versions: ['>=5.0.0']
     - dependency-name: rehype-mathjax
       versions: ['>=4.0.0']
-    - dependency-name: vue/test-utils
+    - dependency-name: '@vue/test-utils'
       versions: ['>=2.4.7']
   groups:
     nuxtjs:
