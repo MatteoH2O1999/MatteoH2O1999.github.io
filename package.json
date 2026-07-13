@@ -49,7 +49,7 @@
     "jest": "^30.4.2",
     "jest-environment-jsdom": "^30.4.1",
     "mediainfo-wrapper": "^1.2.0",
-    "selenium-webdriver": "^4.45.0",
+    "selenium-webdriver": "^4.46.0",
     "tree-kill": "^1.2.2",
     "vue-jest": "^3.0.4"
   }
